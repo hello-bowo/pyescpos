@@ -22,7 +22,11 @@ from __future__ import absolute_import
 import logging
 import os
 
-from ConfigParser import SafeConfigParser
+try:
+    from ConfigParser import SafeConfigParser
+except ModuleNotFoundError:
+    from configparser import SafeConfigParser
+
 from collections import namedtuple
 
 from . import constants
